@@ -1,6 +1,6 @@
 <?php
 
-class StaticValetDriver extends ValetDriver
+class DistFolderValetDriver extends ValetDriver
 {
     /**
      * Determine if the driver serves the request.
@@ -12,7 +12,7 @@ class StaticValetDriver extends ValetDriver
      */
     public function serves($sitePath, $siteName, $uri)
     {
-        if (file_exists($sitePath.'/static')) {
+        if (file_exists($sitePath.'/dist')) {
             return true;
         }
 
@@ -29,7 +29,7 @@ class StaticValetDriver extends ValetDriver
      */
     public function isStaticFile($sitePath, $siteName, $uri)
     {
-        if (file_exists($staticFilePath = $sitePath.'/public/'.$uri)) {
+        if (file_exists($staticFilePath = $sitePath.'/dist/'.$uri)) {
             return $staticFilePath;
         }
 
@@ -49,6 +49,6 @@ class StaticValetDriver extends ValetDriver
         if (substr($uri, -1) === '/') {
             $uri = 'index.php';
         }
-        return $sitePath.'/public/'.$uri;
+        return $sitePath.'/dist/'.$uri;
     }
 }
