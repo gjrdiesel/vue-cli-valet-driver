@@ -1,9 +1,11 @@
-# Static Valet Driver 
+# Serve a static dist folder w/ Laravel Valet 
 
-Valet driver for serving static php files. By default, laravel valet will reroute all requests to the index.php file in the public folder.
+Valet driver for serving static php files. By default, laravel valet will reroute all requests to the index.php. This will use a dist folder so can pull in the project and only run `npm run build` occasionally but still have it served under valet.
 
-This driver will route all file requests to their appropriate files.
+## Install
+Download and copy the `DistFolderValetDriver.php` to `~/.config/valet/Drivers/DistFolderValetDriver.php`
 
-To enable the drive, simply create a `static` file in the root of the project. This file can be added to the gitignore to ensure it isn't committed.
-
-To add the driver, simply copy the `StaticValetDriver.php` file to your `~/.config/valet/Drivers` folder.
+Or run:
+```bash
+curl -o ~/.config/valet/Drivers/DistFolderValetDriver.php  https://raw.githubusercontent.com/gjrdiesel/static-valet-driver/master/DistFolderValetDriver.php 
+```
