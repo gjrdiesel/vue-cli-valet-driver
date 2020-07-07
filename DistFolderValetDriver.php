@@ -46,7 +46,6 @@ class DistFolderValetDriver extends ValetDriver
      */
     public function frontControllerPath($sitePath, $siteName, $uri)
     {
-        $uri = 'index.php';
-        return $sitePath.'/dist/'.$uri;
+        return $sitePath.'/dist/index.html';
     }
 }
